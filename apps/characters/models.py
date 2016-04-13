@@ -18,7 +18,7 @@ class Event(models.Model):
     date = models.DateField('date of event')
     title = models.CharField(max_length=100)
     short_description = models.CharField(max_length=300)
-    hp_character = models.ForeignKey(HPCharacter, verbose_name='Character')  
+    hp_character = models.ForeignKey(HPCharacter, verbose_name='Character')
 
     def __unicode__(self):
         return '{hp_character}-{title}'.format(hp_character=self.hp_character, title=self.title)
