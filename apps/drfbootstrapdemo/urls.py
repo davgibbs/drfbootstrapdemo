@@ -19,7 +19,7 @@ from rest_framework import routers
 from characters import views
 
 router = routers.DefaultRouter()
-router.register(r'events', views.EventViewSet)
+router.register(r'events', views.EventViewSet, base_name='eventsset')
 router.register(r'characters', views.HPCharacterViewSet)
 
 urlpatterns = [

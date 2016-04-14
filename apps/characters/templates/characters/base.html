@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Harry Potter Characters</title>
+  <meta name="description" content="Events for Harry Potter Characters">
+  <meta name="author" content="David Gibbons">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'characters/style.css' %}" />
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <script src="{% static 'characters/js/jquery-1.12.3.min.js' %}"></script>
+  {% block content %}
+  {% endblock content %}
+</body>
+
+</html>
