@@ -1,5 +1,5 @@
 *.sqlite3
 *.pyc
-*.py~
+*~
 py27/
 .idea/
