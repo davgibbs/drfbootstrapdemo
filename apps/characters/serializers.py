@@ -12,4 +12,4 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = HPCharacter
-        fields = ('full_name',)
+        fields = ('full_name', 'id')

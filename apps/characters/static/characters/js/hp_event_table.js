@@ -1,15 +1,11 @@
 "use strict";
 
 $( document ).ready(function() {
-    console.log( "ready!" );
-
     // Make an Ajax call to the api to get all events
     var jsonurl = "http://127.0.0.1:8000/api/events/?character_id=1";
-    console.log('cc');
-
     var graph_get = $.get(jsonurl, {});
 
-   //$('.spinner').show();
+    //$('.spinner').show();
     graph_get.done(function( data ) {
         //$('.spinner').hide();
 
