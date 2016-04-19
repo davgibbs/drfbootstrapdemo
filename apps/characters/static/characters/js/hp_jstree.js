@@ -16,8 +16,6 @@ function get_json_jstree_formatted(results){
 
 
 $( document ).ready(function() {
-    // Make an Ajax call to the api to get all events
-
     var jsonurl = "http://127.0.0.1:8000/api/characters/";
     var graph_get = $.get(jsonurl, {});
 
