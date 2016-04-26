@@ -2,8 +2,10 @@
 {% load staticfiles %}
 
 {% block content %}
-<div id="hp_jstree"></div>
-<div id="hp_events_table"></div>
+<div class="row" id="mycontent-template">
+    <div class="col-md-4" id="hp_jstree"></div>
+    <div class="col-md-8" id="hp_events_table"></div>
+</div>
 <script src="{% static 'characters/js/hp_jstree.js' %}"></script>
 <script src="{% static 'characters/js/hp_event_table.js' %}"></script>
 {% endblock content %}

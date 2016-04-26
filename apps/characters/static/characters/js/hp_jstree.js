@@ -19,25 +19,21 @@ $( document ).ready(function() {
     var jsonurl = "http://127.0.0.1:8000/api/characters/";
     var graph_get = $.get(jsonurl, {});
 
-    //$('.spinner').show();
     graph_get.done(function( data ) {
-
-        //$('.spinner').hide();
-
-        console.log(data.results);
-        //var json_parsed = JSON.parse(data);
-        //console.log(json_parsed);
-
         var json_jstree_formatted = get_json_jstree_formatted(data.results);
 
         $('#hp_jstree').jstree({
             "core" : {
                 "data" : json_jstree_formatted,
                 "multiple": false
-            }
+            },
+            "types" : {
+              "default" : {
+                "icon" : "glyphicon glyphicon-flash"
+              },
+            },
+            "plugins" : [ "themes", "ui", "wholerow", "types" ]
         });
-
-
     });
 });
 
