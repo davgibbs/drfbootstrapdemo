@@ -21,7 +21,7 @@ $( document ).ready(function() {
             //$('.spinner').hide();
             $('#hp_events_table').empty();
 
-            var $add_button = $('<button type="button" class="btn btn-large btn-info" id="event-add"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add New Event</button>');
+            var $add_button = $('<button type="button" class="btn btn-large btn-info" id="sensorlogs-data-add"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add New Event</button>');
 
             var $table = $('<table class="table table-bordered" />');
             $table.append('<tr><th>Date</th><th>Event</th><th colspan="2" style="text-align: center">Actions</th></tr>' );
@@ -35,8 +35,6 @@ $( document ).ready(function() {
             $('#hp_events_table').append($add_button);
             $('#hp_events_table').append('<br><br>');
             $('#hp_events_table').append($table);
-
-            listen_for_change_clicks()
         });
     });
 });

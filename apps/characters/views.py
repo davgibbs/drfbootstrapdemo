@@ -6,7 +6,6 @@ from .models import Event, HPCharacter
 
 def index(request):
     return render(request, "characters/index.html", {})
-    #return HttpResponse("Hello, world. You're at the characters index.")
 
 
 class EventViewSet(viewsets.ModelViewSet):

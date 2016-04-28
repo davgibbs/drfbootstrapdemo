@@ -1,0 +1,16 @@
+body {
+  padding-top: 50px;
+}
+.mycontent-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+    float:none;
+}
