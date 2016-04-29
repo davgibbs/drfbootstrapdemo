@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6lv7918rw4vf*%@(r--(%4v^iwzaa8wia*)53-^@aa&$t-xn_$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -127,5 +127,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 #     'PAGE_SIZE': 10
 # }
 REST_FRAMEWORK = {
-     'PAGE_SIZE': 10
+     'PAGE_SIZE': 50
 }

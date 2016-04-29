@@ -10,11 +10,15 @@ function format_date(in_date){
     return out_date
 }
 
-$( document ).ready(function() {
-    $('#hp_jstree').on("changed.jstree", function (e, data) {
+
+function listen_for_jstree_clicks() {
+    $('#jstree_div').on("changed.jstree", function (e, data) {
         // Make an Ajax call to the api to get all events
-        var jsonurl = "../api/events/?character_id=" + data.selected[0];
-        var graph_get = $.get(jsonurl, {});
+        var graph_get = $.ajax({
+                url: "../api/events/?character_id=" + data.selected[0],
+                type: "GET",
+            });
+        selected_character.character_id = data.selected[0];
 
         //$('.spinner').show();
         graph_get.done(function( data ) {
@@ -39,4 +43,4 @@ $( document ).ready(function() {
             listen_for_change_clicks()
         });
     });
-});
+}

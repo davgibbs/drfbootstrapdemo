@@ -2,23 +2,14 @@
 
 // A generic method to process and show the result
 function process_and_show_result(data){
-    $('.spinner').hide();
-    var result = JSON.parse(data);
+    //$('.spinner').hide();
 
-    if (result.success === "true") {
-        var message = result.results[0].message;
-        $("#response_type").text("Success");
-        $("#wmh-button-type").removeClass( "btn-danger" );
-        $("#wmh-button-type").addClass( "btn-success" );
-        $("#modal-message").text(message);
-    }
-    else {
-        var error_message = result.results[0].message;
-        $("#response_type").text("Error");
-        $("#wmh-button-type").removeClass( "btn-success" );
-        $("#wmh-button-type").addClass( "btn-danger" );
-        $("#modal-message").text(error_message);
-    }
+    //var message = result.results[0].message;
+    $("#response_type").text("Success");
+    $("#wmh-button-type").removeClass( "btn-danger" );
+    $("#wmh-button-type").addClass( "btn-success" );
+    $("#modal-message").text('Successfully created Event:\n' + data);
+
     $("#resultModal").modal('show');
 }
 
