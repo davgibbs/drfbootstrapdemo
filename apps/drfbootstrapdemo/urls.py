@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.http import HttpResponseRedirect
+
 from rest_framework import routers
+
 from characters import views
 
 router = routers.DefaultRouter()
@@ -23,7 +26,8 @@ router.register(r'events', views.EventViewSet, base_name='eventsset')
 router.register(r'characters', views.HPCharacterViewSet)
 
 urlpatterns = [
-    url(r'^characters/', include('characters.urls')),
+    url(r'^$', lambda r: HttpResponseRedirect('characters/')),
+    url(r'^characters/', include('characters.urls'), name='homepage'),
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     #url(r'^api-characters/', include('rest_framework.urls', namespace='rest_framework')),

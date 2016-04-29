@@ -29,7 +29,7 @@ $( document ).ready(function() {
     graph_get.done(function( data ) {
         var json_jstree_formatted = get_json_jstree_formatted(data.results);
 
-        var $jstree_header = $('<div><h2>Characters</h2></div>');
+        var $jstree_header = $('<div><h3>Characters</h3></div>');
 
         var $jstree_div = $('<div id="jstree_div"></div>');
         $jstree_div.jstree({

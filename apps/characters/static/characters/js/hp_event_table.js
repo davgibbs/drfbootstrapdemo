@@ -32,8 +32,8 @@ function listen_for_jstree_clicks() {
             for (var event = 0; event < data.results.length; event++) {
                 var $row = $('<tr />');
                 $row.append('<td>' + format_date(data.results[event].date) + '</td><td>' + data.results[event].title + '</td>' );
-                $row.append('<td align="center" class="sensorlogs-data-delete" name="'+'"><a><span title="Delete" class="glyphicon glyphicon-remove"></span></a></td>');
-                $row.append('<td align="center" class="sensorlogs-data-edit" name="'+'"><a><span title="Edit" class="glyphicon glyphicon-edit"></span></a></td>');
+                $row.append('<td align="center" class="event-delete" name="' + data.results[event].id + '"><a><span title="Delete" class="glyphicon glyphicon-remove"></span></a></td>');
+                $row.append('<td align="center" class="event-edit" name="' + data.results[event].id + '"><a><span title="Edit" class="glyphicon glyphicon-edit"></span></a></td>');
                 $table.append($row)
             }
             $('#hp_events_table').append($add_button);

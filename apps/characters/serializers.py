@@ -6,7 +6,7 @@ from .models import Event, HPCharacter
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Event
-        fields = ('date', 'title', 'short_description', 'hp_character')
+        fields = ('date', 'title', 'short_description', 'hp_character', 'id')
 
 
 class CharacterSerializer(serializers.HyperlinkedModelSerializer):

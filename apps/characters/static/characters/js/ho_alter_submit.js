@@ -38,7 +38,6 @@ var add_form = $('#add-event-form');
 $(add_form).unbind( "submit" );
 $(add_form).submit(function(event) {
     event.preventDefault();
-    console.log('dd');
     $("#AddEventModal").modal('hide');
 
     var event_date = $("input[id='InputEventDate']").val();
@@ -54,6 +53,30 @@ $(add_form).submit(function(event) {
              "hp_character": "http://127.0.0.1:8000/api/characters/" + selected_character.character_id + "/",
              }
         });
+
+    //$('.spinner').show();
+    add_event_post.done(function( data ) {
+        process_and_show_result(data);
+    });
+});
+
+
+// Handle Delete Event form submission
+var add_form = $('#delete-event-form');
+// Unbind any previous bindings for add
+$(add_form).unbind( "submit" );
+$(add_form).submit(function(event) {
+    event.preventDefault();
+    $("#DeleteEventModal").modal('hide');
+
+    var event_id = $("input[id='DeleteEventID']").val();
+    console.log(event_id);
+
+    var add_event_post = $.ajax({
+      url: "../api/events/" + event_id + "/",
+      type: "DELETE",
+      dataType: "json",
+    });
 
     //$('.spinner').show();
     add_event_post.done(function( data ) {
