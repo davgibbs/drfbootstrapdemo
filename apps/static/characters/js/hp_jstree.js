@@ -15,14 +15,24 @@ function get_json_jstree_formatted(results){
 }
 
 
+var selected_character = {
+    character_id: null,
+}
+
+
 $( document ).ready(function() {
-    var jsonurl = "../api/characters/";
-    var graph_get = $.get(jsonurl, {});
+    var graph_get = $.ajax({
+         url: "../api/characters/",
+         type: "GET",
+    });
 
     graph_get.done(function( data ) {
         var json_jstree_formatted = get_json_jstree_formatted(data.results);
 
-        $('#hp_jstree').jstree({
+        var $jstree_header = $('<div><h3>Characters</h3></div>');
+
+        var $jstree_div = $('<div id="jstree_div"></div>');
+        $jstree_div.jstree({
             "core" : {
                 "data" : json_jstree_formatted,
                 "multiple": false
@@ -34,6 +44,11 @@ $( document ).ready(function() {
             },
             "plugins" : [ "themes", "ui", "wholerow", "types" ]
         });
+
+        $('#hp_jstree').append($jstree_header);
+        $('#hp_jstree').append($jstree_div);
+
+        listen_for_jstree_clicks()
     });
 });
 

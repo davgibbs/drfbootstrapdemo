@@ -8,9 +8,12 @@ body {
 .navbar-header {
     float: left;
     padding: 15px;
-    text-align: center;
     width: 100%;
 }
 .navbar-brand {
     float:none;
+}
+h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
