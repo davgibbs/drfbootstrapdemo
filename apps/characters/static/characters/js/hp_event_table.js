@@ -1,6 +1,7 @@
 "use strict";
 
 function format_date(in_date){
+    // Function not used at the minute
     var d = new Date(in_date);
     var out_date = d.toLocaleDateString('en-GB', {
         day : 'numeric',
@@ -30,7 +31,7 @@ function populate_event_table(character_id){
         $table.append('<tr><th>Date</th><th>Event</th><th colspan="2" style="text-align: center">Actions</th></tr>' );
         for (var event = 0; event < data.results.length; event++) {
             var $row = $('<tr />');
-            $row.append('<td>' + format_date(data.results[event].date) + '</td><td>' + data.results[event].title + '</td>' );
+            $row.append('<td>' + data.results[event].date + '</td><td>' + data.results[event].title + '</td>' );
             $row.append('<td align="center" class="event-delete" name="' + data.results[event].id + '"><a><span title="Delete" class="glyphicon glyphicon-remove"></span></a></td>');
             $row.append('<td align="center" class="event-edit" name="' + data.results[event].id + '"><a><span title="Edit" class="glyphicon glyphicon-edit"></span></a></td>');
             $table.append($row)

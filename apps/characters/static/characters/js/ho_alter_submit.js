@@ -56,31 +56,63 @@ $(add_form).submit(function(event) {
 
     //$('.spinner').show();
     add_event_post.done(function( data ) {
-        process_and_show_result(data);
+        process_and_show_result('Successfully added event: "' + event_title + '" on "' + event_date + '"');
         populate_event_table(selected_character.character_id);
     });
 });
 
 
 // Handle Delete Event form submission
-var add_form = $('#delete-event-form');
+var delete_form = $('#delete-event-form');
 // Unbind any previous bindings for add
-$(add_form).unbind( "submit" );
-$(add_form).submit(function(event) {
+$(delete_form).unbind( "submit" );
+$(delete_form).submit(function(event) {
     event.preventDefault();
     $("#DeleteEventModal").modal('hide');
 
     var event_id = $("input[id='DeleteEventID']").val();
 
-    var add_event_post = $.ajax({
+    var delete_event_delete = $.ajax({
       url: "../api/events/" + event_id + "/",
       type: "DELETE",
       dataType: "json",
     });
 
     //$('.spinner').show();
-    add_event_post.done(function( data ) {
-        process_and_show_result(data);
+    delete_event_delete.done(function( data ) {
+        process_and_show_result('Successfully deleted event id: "' + event_id + '"');
+        populate_event_table(selected_character.character_id);
+    });
+});
+
+
+// Handle Edit Event form submission
+var edit_form = $('#edit-event-form');
+// Unbind any previous bindings for add
+$(edit_form).unbind( "submit" );
+$(edit_form).submit(function(event) {
+    event.preventDefault();
+    $("#EditEventModal").modal('hide');
+
+    var event_id = $("input[id='EditEventID']").val();
+    var event_date = $("input[id='EditEventDate']").val();
+    var event_title = $("input[id='EditEventTitle']").val();
+
+    var edit_event_put = $.ajax({
+      url: "../api/events/" + event_id + "/",
+      type: "PUT",
+      dataType: "json",
+      data: {"id": event_id,
+             "date": event_date,
+             "title": event_title,
+             "short_description": "description",
+             "hp_character": "http://127.0.0.1:8000/api/characters/" + selected_character.character_id + "/",
+             }
+      });
+
+    //$('.spinner').show();
+    edit_event_put.done(function( data ) {
+        process_and_show_result('Successfully updated event id: "' + event_id + '"');
         populate_event_table(selected_character.character_id);
     });
 });
