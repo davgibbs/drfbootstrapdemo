@@ -57,6 +57,7 @@ $(add_form).submit(function(event) {
     //$('.spinner').show();
     add_event_post.done(function( data ) {
         process_and_show_result(data);
+        populate_event_table(selected_character.character_id);
     });
 });
 
@@ -70,7 +71,6 @@ $(add_form).submit(function(event) {
     $("#DeleteEventModal").modal('hide');
 
     var event_id = $("input[id='DeleteEventID']").val();
-    console.log(event_id);
 
     var add_event_post = $.ajax({
       url: "../api/events/" + event_id + "/",
@@ -81,5 +81,6 @@ $(add_form).submit(function(event) {
     //$('.spinner').show();
     add_event_post.done(function( data ) {
         process_and_show_result(data);
+        populate_event_table(selected_character.character_id);
     });
 });

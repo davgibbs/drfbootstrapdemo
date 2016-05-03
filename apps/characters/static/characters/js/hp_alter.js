@@ -23,20 +23,12 @@ function listen_for_change_clicks() {
         // Handle Delete Event button press
         $(".event-delete").click( function() {
             $("#DeleteEventModal").modal('show');
+
             var event_id = $(this).attr('name');
             $("#DeleteEventID").val(event_id);
 
-            //var $tr = $(this).parent();
-            var date = $(this).parent().val();
-            //var title = $(this).siblings('td').val();
-            console.log(date);
-            console.log(value);
-            console.log($(this).attr('name'));
-            console.log($(this));
-//            var name = $(this).attr('name').split('----');
-//            console.log(name);
-//            $("#DeleteEventDate").val(name[0]);
-//            $("#DeleteEventTitle").val(name[1]);
+            var date = $(this).siblings("td:first").text();
+            var title = $(this).siblings("td:nth-child(2)").text();
             $("#DeleteEventDate").val(date);
             $("#DeleteEventTitle").val(title);
         });
