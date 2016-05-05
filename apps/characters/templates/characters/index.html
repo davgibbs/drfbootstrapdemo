@@ -4,7 +4,12 @@
 {% block content %}
 <div class="row" id="mycontent-template">
     <div class="col-md-4" id="hp_jstree"></div>
-    <div class="col-md-8" id="hp_events_table"></div>
+    <div class="col-md-8" id="hp_events">
+        <div id="ajax-spinner" style="display:none;">
+            <img src="{% static 'characters/images/ajax-loader.gif' %}" alt="Loading" />
+        </div>
+        <div id="hp_events_table"></div>
+    </div>
 </div>
 
 <script src="{% static 'characters/js/hp_alter.js' %}"></script>

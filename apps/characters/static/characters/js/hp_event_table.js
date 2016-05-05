@@ -20,9 +20,9 @@ function populate_event_table(character_id){
         });
     selected_character.character_id = character_id;
 
-    //$('.spinner').show();
+    $('#ajax-spinner').show();
     graph_get.done(function( data ) {
-        //$('.spinner').hide();
+        $('#ajax-spinner').hide();
         $('#hp_events_table').empty();
 
         var $add_button = $('<button type="button" class="btn btn-large btn-info" id="event-add"><i class="glyphicon glyphicon-plus"></i> &nbsp; Add New Event</button>');
