@@ -41,6 +41,10 @@ function populate_event_table(character_id){
         $('#hp_events_table').append($table);
 
         listen_for_change_clicks()
+
+        // Update the URL
+        History.pushState(null, null, '?character_id='+ character_id);
+
     });
 }
 
