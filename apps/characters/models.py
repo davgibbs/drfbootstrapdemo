@@ -21,7 +21,8 @@ class Event(models.Model):
     hp_character = models.ForeignKey(HPCharacter, verbose_name='Character')
 
     def __unicode__(self):
-        return '{hp_character}-{title}'.format(hp_character=self.hp_character, title=self.title)
+        return '{hp_character}-{title}'.format(hp_character=self.hp_character,
+                                               title=self.title)
 
     class Meta:
         verbose_name = 'event'

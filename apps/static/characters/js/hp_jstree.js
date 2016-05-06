@@ -1,3 +1,4 @@
+/* globals listen_for_jstree_clicks: true */
 "use strict";
 
 function get_json_jstree_formatted(results){
@@ -8,7 +9,7 @@ function get_json_jstree_formatted(results){
         json_jstree_formatted.push({
             text: results[i].full_name,
             id: results[i].id
-        })
+        });
     }
 
     return json_jstree_formatted;
@@ -17,7 +18,7 @@ function get_json_jstree_formatted(results){
 
 var selected_character = {
     character_id: null,
-}
+};
 
 
 $( document ).ready(function() {
@@ -48,7 +49,7 @@ $( document ).ready(function() {
         $('#hp_jstree').append($jstree_header);
         $('#hp_jstree').append($jstree_div);
 
-        listen_for_jstree_clicks()
+        listen_for_jstree_clicks();
     });
 });
 

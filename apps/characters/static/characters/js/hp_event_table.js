@@ -1,3 +1,4 @@
+/* globals listen_for_jstree_clicks: true */
 "use strict";
 
 function format_date(in_date){

@@ -1,3 +1,4 @@
+/* globals listen_for_change_clicks: true, selected_character: true */
 "use strict";
 
 function format_date(in_date){
@@ -7,8 +8,8 @@ function format_date(in_date){
         day : 'numeric',
         month : 'short',
         year : 'numeric'
-    })
-    return out_date
+    });
+    return out_date;
 }
 
 
@@ -34,13 +35,13 @@ function populate_event_table(character_id){
             $row.append('<td>' + data.results[event].date + '</td><td>' + data.results[event].title + '</td>' );
             $row.append('<td align="center" class="event-delete" name="' + data.results[event].id + '"><a><span title="Delete" class="glyphicon glyphicon-remove"></span></a></td>');
             $row.append('<td align="center" class="event-edit" name="' + data.results[event].id + '"><a><span title="Edit" class="glyphicon glyphicon-edit"></span></a></td>');
-            $table.append($row)
+            $table.append($row);
         }
         $('#hp_events_table').append($add_button);
         $('#hp_events_table').append('<br><br>');
         $('#hp_events_table').append($table);
 
-        listen_for_change_clicks()
+        listen_for_change_clicks();
     });
 }
 

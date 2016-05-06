@@ -44,5 +44,4 @@ function listen_for_change_clicks() {
             $("#EditEventTitle").val(title);
         });
     });
-};
-
+}
