@@ -10,3 +10,5 @@ pipelines:
           - pip --version
           - tox --version
           - pip install -r requirements.txt
+          - npm install -g jshint
+          - jshint ./apps/characters/static/characters/js/hp_jstree.js
